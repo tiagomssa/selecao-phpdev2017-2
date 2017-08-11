@@ -18,6 +18,7 @@ A aplicação **SimplesVet Lite** está evoluindo e precisa de 3 novas funcional
 Se quiser ir **além** e mostrar que *Tom Cruise* é licuri, aqui vão algumas coisas divertidas:
 
 1. A aplicação e a API estão sem controle de acesso... o.O
+2. Seria legal ter upload da imagem do animal!
 
 Fique livre para propor/implementar outras novidades bacanas. Seja de funcionalidade ou estrutura de código.
 
@@ -53,7 +54,7 @@ Para saber como colocar a aplicação pra funcionar, acesse o arquivo [SETUP.md]
 ### Template
 Para interface do exemplo, foi usado o template [Metronic](http://keenthemes.com/preview/metronic/theme/admin_3/). Acesse o link para visualizar todos os recursos disponíveis no template.
 
-###Acessar a Aplicação
+### Acessar a Aplicação
 Acesse em http://localhost/selecao-phpdev2017-2/app/ (Claro que isso vai depender do seu ambiente local)
 
 ---
