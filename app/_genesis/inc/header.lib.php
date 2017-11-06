@@ -11,7 +11,8 @@ function getLibsDefault() {
             URL_STATIC_GN . 'js/gFunctions.js',
             URL_STATIC_GN . 'js/gDisplay.js',
             URL_STATIC_GN . 'js/gAjax.js',
-            URL_STATIC_GN . 'js/gValidate.js'
+            URL_STATIC_GN . 'js/gValidate.js',
+            URL_STATIC_GN . 'js/jquery.mask.js'
         ),
         'paginate' => array(
             ROOT_GENESIS . 'inc/paginate.class.php',

@@ -13,7 +13,10 @@ $app->get('/animais/{ani_int_codigo}', function (Request $request, Response $res
 
     $data = AnimalDao::selectByIdForm($animal);
     $code = count($data) > 0 ? 200 : 404;
-
+    if ($code == 200)
+    {
+        return json_encode($data);
+    }
 	return $response->withJson($data, $code);
 });
 
@@ -25,11 +28,14 @@ $app->post('/animais', function (Request $request, Response $response) {
     $animal->setAni_var_nome($body['ani_var_nome']);
  	$animal->setAni_cha_vivo($body['ani_cha_vivo']);
  	$animal->setAni_dec_peso($body['ani_dec_peso']);
- 	$animal->setAni_var_raca($body['ani_var_raca']);
+    $animal->setAni_var_raca($body['raca_int_codigo']);
+    $animal->setAni_int_prop($body['prop_int_codigo']);
 
     $data = AnimalDao::insert($animal);
     $code = ($data['status']) ? 201 : 500;
-
+    if($code == 201){
+        return json_encode($data);
+    }
 	return $response->withJson($data, $code);
 });
 
@@ -44,11 +50,14 @@ $app->put('/animais/{ani_int_codigo}', function (Request $request, Response $res
     $animal->setAni_var_nome($body['ani_var_nome']);
  	$animal->setAni_cha_vivo($body['ani_cha_vivo']);
  	$animal->setAni_dec_peso($body['ani_dec_peso']);
- 	$animal->setAni_var_raca($body['ani_var_raca']);
+    $animal->setAni_var_raca($body['raca_int_codigo']);
+    $animal->setAni_int_prop($body['prop_int_codigo']);
 
     $data = AnimalDao::update($animal);
     $code = ($data['status']) ? 200 : 500;
-
+    if($code == 200){
+        return json_encode($data);
+    }
 	return $response->withJson($data, $code);
 });
 

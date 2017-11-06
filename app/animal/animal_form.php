@@ -1,6 +1,25 @@
 <?php
 $form = new GForm();
 
+//carregar racas de animais
+function getRacas(){
+    $mysql = new GDbMysql();
+    $query = "select raca_int_codigo, raca_var_nome from raca";
+    $result = $mysql->executeCombo($query);
+    return $result;
+};
+
+function getProprietarios(){
+    $mysql = new GDbMysql();
+    $query = "select prop_int_codigo, prop_var_nome from proprietario";
+    $result = $mysql->executeCombo($query);
+    return $result;
+};
+
+$propietarios = getProprietarios();
+$racas = getRacas();
+
+
 //<editor-fold desc="Header">
 $title = '<span class="acaoTitulo"></span>';
 $tools = '<a id="f__btn_voltar"><i class="fa fa-arrow-left font-blue-steel"></i> <span class="hidden-phone font-blue-steel bold uppercase">Voltar</span></a>';
@@ -14,7 +33,9 @@ $htmlForm .= $form->addInput('text', 'ani_var_nome', 'Nome*', array('maxlength' 
 $htmlForm .= $form->addSelect('ani_cha_vivo', array('S' => 'Sim', 'N' => 'Não'), '', 'Vivo*', array('validate' => 'required'), false, false, true, '', 'Selecione...');
 
 $htmlForm .= $form->addInput('text', 'ani_dec_peso', 'Peso*', array('maxlength' => '100', 'validate' => 'required'));
-$htmlForm .= $form->addInput('text', 'ani_var_raca', 'Raça*', array('maxlength' => '100', 'validate' => 'required'));
+//$htmlForm .= $form->addInput('text', 'ani_var_raca', 'Raça*', array('maxlength' => '100', 'validate' => 'required'));
+$htmlForm .= $form->addSelect('raca_int_codigo', $racas, '', 'Raça*', array('validate' => 'required'), false, false, true, '', 'Selecione...');
+$htmlForm .= $form->addSelect('prop_int_codigo', $propietarios, '', 'Proprietario*', array('validate' => 'required'), false, false, true, '', 'Selecione...');
 
 
 $htmlForm .= '<div class="form-actions">';
@@ -28,7 +49,7 @@ echo $htmlForm;
 ?>
 <script>
     $(function() {
-        $('#ani_dec_peso').maskMoney({thousands:'.', decimal:',', precision:3,  affixesStay: false});
+        $('#ani_dec_peso').maskMoney({thousands:'.', decimal:',', precision:2,  affixesStay: false});
 
         $('#form').submit(function() {
             var ani_int_codigo = $('#ani_int_codigo').val();

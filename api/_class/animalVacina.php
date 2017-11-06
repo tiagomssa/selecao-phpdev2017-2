@@ -3,13 +3,13 @@ class AnimalVacina{
 	
 	private $anv_int_codigo;
 	/* @var $animal Animal */
-	private $animal;
+	private $animalCod;
 	/* @var $vacina Vacina */
-	private $vacina;
+	private $vacinaCod;
 	private $anv_dat_programacao;
 	private $anv_dti_aplicacao;
 	/* @var $usuario Usuario */
-	private $usuario;
+	private $usuarioCod;
 
 
 	public function getAnv_int_codigo() {
@@ -21,23 +21,23 @@ class AnimalVacina{
 	}
 
 	/** @return Animal */
-	public function getAnimal() {
-		return $this->animal;
+	public function getAnimalCod() {
+		return $this->animalCod;
 	}
 
 	/** @param Animal $animal */
-	public function setAnimal($animal) {
-		$this->animal = $animal;
+	public function setAnimalCod($animalCod) {
+		$this->animalCod = $animalCod;
 	}
 
 	/** @return Vacina */
-	public function getVacina() {
-		return $this->vacina;
+	public function getVacinaCod() {
+		return $this->vacinaCod;
 	}
 
 	/** @param Vacina $vacina */
-	public function setVacina($vacina) {
-		$this->vacina = $vacina;
+	public function setVacinaCod($vacinaCod) {
+		$this->vacinaCod = $vacinaCod;
 	}
 
 	public function getAnv_dat_programacao() {
@@ -57,13 +57,13 @@ class AnimalVacina{
 	}
 
 	/** @return Usuario */
-	public function getUsuario() {
-		return $this->usuario;
+	public function getUsuarioCod() {
+		return $this->usuarioCod;
 	}
 
 	/** @param Usuario $usuario */
-	public function setUsuario($usuario) {
-		$this->usuario = $usuario;
+	public function setUsuarioCod($usuarioCod) {
+		$this->usuarioCod = $usuarioCod;
 	}
 
 }

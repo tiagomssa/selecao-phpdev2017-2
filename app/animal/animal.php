@@ -73,7 +73,8 @@ $footer->show();
             selectLine(ani_int_codigo);
 
             loadForm(URL_API + 'animais/' + ani_int_codigo, function(json) {
-                $('#ani_dec_peso').val(numberFormat(json.ani_dec_peso,3));
+                $('#ani_dec_peso').val(numberFormat(json.ani_dec_peso,2));
+                $('#raca_int_codigo').val(json.raca_int_codigo);
                 showForm('divForm', 'upd', 'Editar');
             });
         });

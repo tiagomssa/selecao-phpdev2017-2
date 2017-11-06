@@ -12,7 +12,10 @@ $app->get('/usuarios/{usu_int_codigo}', function (Request $request, Response $re
 
     $data = UsuarioDao::selectByIdForm($usuario);
     $code = count($data) > 0 ? 200 : 404;
-
+    if ($code == 200)
+    {
+        return json_encode($data);
+    }
 	return $response->withJson($data, $code);
 });
 
